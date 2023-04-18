@@ -3,15 +3,14 @@ import ListRender from "../components/TodoList/ListRender";
 import NewItem from "../components/TodoList/NewItem";
 
 function TodoList() {
-  const [messages, setMassages] = useState([
-    "asdfaf",
-    "fsadf",
-    "fasdfs",
-    "fasdfs",
-    "fasdfs",
-    "fasdfs",
-    "dsffasd"
-  ]);
+  const [messages, setMassages] = useState([]);
+  fetch("https://jsonplaceholder.typicode.com/posts")
+    .then((response) => response.json())
+    .then((data) => {
+      data = data.slice(0, 10).map((e) => e.body.slice(0, 10));
+      setMassages(data);
+    })
+    .catch((err) => console.log(err));
 
   return (
     <>
