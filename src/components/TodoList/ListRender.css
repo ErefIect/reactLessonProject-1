@@ -1,0 +1,16 @@
+.todo-list-title {
+    margin: 0;
+    padding: 0;
+    color: rgb(66, 182, 182);
+    display: flex;
+    justify-content: center;
+}
+.todo-list {
+    margin: 0;
+    padding: 0;
+    border-color: antiquewhite;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
