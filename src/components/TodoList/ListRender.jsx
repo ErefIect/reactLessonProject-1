@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import TodoItem from "./TodoItem";
-import './ListRender.css'
+import "./ListRender.css";
 
 function ListRender({ messages, setMessages }) {
   return (
@@ -8,7 +8,15 @@ function ListRender({ messages, setMessages }) {
       <h3 className="todo-list-title">List</h3>
       <ul className="todo-list">
         {messages.map((e, id) => {
-          return <TodoItem key={id} index={id} items={messages} setMessages={setMessages} contents={e} />;
+          return (
+            <TodoItem
+              key={id}
+              index={id}
+              items={messages}
+              setMessages={setMessages}
+              contents={e}
+            />
+          );
         })}
       </ul>
     </>
